@@ -69,14 +69,41 @@ body{
 .container{
     width: 75vw;
     height: 85vh;
-    background: #00832D;
 }
 .container-logo{
-    width: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.container-logo img{
+    width: 3rem;
+    height: 3rem;
 }
 .msg-container{
+    height: 77vh;
+    /* background: #00832D; */
+    padding: 2rem;
     background: #fff;
     border-radius: 20px;
+}
+.msg{
+    border: 1px solid #00AC47;
+    padding: 0.4rem 1rem;
+    margin: 1.1rem;
+    border-radius: 10px;
+
+}
+.left{
+    float: left;
+    clear: both;
+    background: #00832D;
+    color: white;
+}
+.right{
+    background: #5BB974;
+    color: white;
+    float: right;
+    clear: both;
 }
 .bgcolors{
     background: #00AC47;
