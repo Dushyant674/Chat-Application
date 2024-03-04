@@ -96,7 +96,7 @@ body{
 .left{
     float: left;
     clear: both;
-    background: #00832D;
+    background: #00AC47;
     color: white;
 }
 .right{
@@ -104,6 +104,22 @@ body{
     color: white;
     float: right;
     clear: both;
+}
+.send{
+    width: 100%;
+    margin: auto;
+    text-align: end;
+}
+#messageInp{
+    margin-right: auto;
+    width: 90%;
+}
+.send button{
+    cursor: pointer;
+    background: #00832D;
+    border: none;
+    outline: none;
+    padding: .4rem 1rem;
 }
 .bgcolors{
     background: #00AC47;
