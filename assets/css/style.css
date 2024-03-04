@@ -85,6 +85,7 @@ body{
     padding: 2rem;
     background: #fff;
     border-radius: 20px;
+    overflow-y: auto;
 }
 .msg{
     border: 1px solid #00AC47;
@@ -100,8 +101,8 @@ body{
     color: white;
 }
 .right{
-    background: #5BB974;
-    color: white;
+    background: #cbf3c6;
+    /* color: white; */
     float: right;
     clear: both;
 }
