@@ -7,15 +7,19 @@ io.on('connection', socket => {
         users[socket.id] = userName;
         io.emit('connected-users', users);
     });
-
+    
     socket.on('send', message => {
         socket.broadcast.emit('receive', {
             message: message, userName: users[socket.id]
         });
     });
 
+    socket.on('typing', userName =>{
+        socket.broadcast.emit('typing', userName);
+    })
+    
     socket.on('disconnect', reason =>{
-        socket.broadcast.emit('left', users[socket.id]);
         delete users[socket.id];
+        io.emit('connected-users', users);
     })
 });

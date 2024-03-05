@@ -102,6 +102,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: .4rem;
+    margin-bottom: 10px;
 
 }
 .active{
@@ -134,7 +135,7 @@ body{
 .left{
     float: left;
     clear: both;
-    background: #00AC47;
+    background: #5BB974;
     color: white;
 }
 .right{
@@ -154,13 +155,16 @@ body{
 }
 .send button{
     cursor: pointer;
-    background: #00832D;
-    color: #fff;
     border: none;
     outline: none;
     border-radius: 10px;
     padding: .4rem 1rem;
 }
+.typing{
+    color: #fff;
+    background: #00832D;
+}
+
 .bgcolors{
     background: #00AC47;
     background: #00832D;

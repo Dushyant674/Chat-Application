@@ -5,7 +5,8 @@ form = document.querySelector('#send-container'),
 messageInput = document.querySelector('#messageInp'),
 messageContainer = document.querySelector('.msg-container'),
 uName = document.querySelector('#yourName'),
-userlist = document.querySelector('.user-container')
+userlist = document.querySelector('.user-container'),
+submitBtn = document.querySelector('#submitbtn'),
 audio = new Audio('/assets/audio/ting.mp3');
 
 // fetch the user's name form URL
@@ -17,8 +18,8 @@ const givename = ()=>{
 
 let userId = givename();
 
+// create the list of active users 
 const active = (user)=>{
-    // userlist.innerHTML = ''
     if(userId != user){
         const activeuser = document.createElement('p');
         activeuser.classList.add('users');
@@ -39,13 +40,30 @@ const append = (message, position) => {
     }
 }
 
+const changeSendColor = ()=>{
+    if (messageInput.value.trim() == ''){
+        submitBtn.classList.remove('typing')
+    } else (
+        submitBtn.classList.add('typing')
+    )
+}
+
+
+form.addEventListener('input', ()=>{
+    socket.emit('typing', userId);
+    changeSendColor();
+})
+
 // when user send message will check if not blank and send to server
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const message = messageInput.value;
-    append(`You: ${message}`, 'right')
-    messageInput.value = '';
-    socket.emit('send', message)
+    const message = messageInput.value.trim();
+    if(message != ''){
+        append(`You: ${message}`, 'right')
+        messageInput.value = '';
+        socket.emit('send', message)
+        changeSendColor();
+    }
 })
 socket.emit('new-user-joined', userId);
 
@@ -57,9 +75,4 @@ socket.on('connected-users', onlineUsers =>{
 
 socket.on('receive', data => {
     append(`${data.userName}: ${data.message}`, 'left');
-})
-
-
-socket.on('left', userName => {
-    append(`${userName} left the chat`, 'right');
 })
