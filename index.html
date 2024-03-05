@@ -13,10 +13,12 @@
             <p>D-Chat Messenger App</p>
         </div>
         <div class="login">
-            <p>Enter your Name:</p>
-            <input type="text" id="">
-            <button id="Login">Enter Room</button>
-        </div>
+                <!-- <p>Enter your Name:</p> -->
+                <input type="text" id="login-name" placeholder="Enter your Name">
+                <span id="error-msg"></span>
+                <button onclick="checkUsername()" id="Login">Enter Room</button>
+            </div>
     </div>
+    <script src="/login.js"></script>
 </body>
 </html>
