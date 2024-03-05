@@ -96,6 +96,7 @@ body{
     background: #fff;
     border-radius: 20px;
     padding: 1.8rem;
+    position: relative;
 }
 .users{
     width: 15vw;
@@ -151,7 +152,11 @@ body{
 }
 #messageInp{
     margin-right: auto;
-    width: 90%;
+    padding: .5rem;
+    border: 2px solid #00832D;
+    border-radius: 7px;
+    width: 92%;
+    box-shadow: 0 4px 8px 0 #cbf3c6;
 }
 .send button{
     cursor: pointer;
@@ -159,12 +164,21 @@ body{
     outline: none;
     border-radius: 10px;
     padding: .4rem 1rem;
+    box-shadow: 0 4px 8px 0 #00832D, 0 6px 20px 0 #00AC47;
 }
 .typing{
     color: #fff;
     background: #00832D;
 }
-
+.typer{
+    color: #00832D;
+    position: absolute;
+    bottom: 30px;
+}
+.mtime{
+    text-align: end;
+    font-size: .7rem;
+}
 .bgcolors{
     background: #00AC47;
     background: #00832D;
